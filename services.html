@@ -18,25 +18,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   Portfolio v4 — SOFT / SMOOTH / LUXURY LIGHT theme
-   Tokens: soft ivory, champagne, bronze-gold. No dark sections.
+   Portfolio v4 — WARM CHAMPAGNE-SAND LUXURY theme
+   Tokens: champagne sand, cream, bronze-gold. No white, no dark.
    ============================================================ */
 
 :root{
-  --bg:#FAF7F1;            /* soft ivory */
-  --bg-2:#FFFFFF;          /* warm white (alternate sections) */
-  --bg-3:#F5EFE3;          /* champagne tint (alternate sections) */
-  --surface:#FFFFFF;
-  --surface-soft:#FDFBF7;
-  --text:#2A2520;          /* soft warm charcoal, never pure black */
-  --muted:#7A7266;
-  --line:#E8DCC8;          /* champagne lines */
-  --gold:#C6A15B;          /* refined champagne gold */
-  --gold-2:#9A7B3F;        /* deep bronze for text accents */
-  --gold-pale:#D9B96A;
+  --bg:#F1E8D6;            /* warm champagne sand */
+  --bg-2:#EADFC8;          /* deeper sand (alternate sections) */
+  --bg-3:#F6EFDD;          /* light sand (alternate sections) */
+  --surface:#FBF5E9;       /* soft cream cards */
+  --surface-soft:#F7EEDC;  /* deeper cream */
+  --text:#3B2F21;          /* deep bronze-brown, never pure black */
+  --muted:#8A7A63;
+  --line:#DCC9A3;          /* warm border */
+  --gold:#B8934A;          /* gold accent */
+  --gold-2:#8A6A33;        /* deep bronze for text accents */
+  --gold-pale:#C9A45C;
+  --gold-hi:#E5D3AC;       /* champagne highlight */
   --sage:#7D8C7B;          /* sparing tiny touches only */
-  --shadow:0 20px 50px rgba(120,100,60,.08);
-  --shadow-hover:0 28px 60px rgba(120,100,60,.14);
+  --shadow:0 20px 50px rgba(122,92,46,.10);
+  --shadow-hover:0 28px 60px rgba(122,92,46,.16);
   --radius-xl:28px; --radius-lg:20px; --radius-md:14px; --max:1180px;
 }
 
@@ -62,7 +63,7 @@ img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 
 /* ---------- text selection / scrollbar / focus ---------- */
-::selection{background:var(--gold);color:#241f18}
+::selection{background:var(--gold);color:#FFF8EA}
 
 ::-webkit-scrollbar{width:11px}
 ::-webkit-scrollbar-track{background:var(--bg-3)}
@@ -136,7 +137,7 @@ a{color:inherit}
 
 /* Bronze-gold gradient text with subtle shimmer */
 .gold-text{
-  background:linear-gradient(120deg,#9A7B3F,#C6A15B 40%,#D9B96A 60%,#9A7B3F);
+  background:linear-gradient(120deg,#8A6A33,#B8934A 40%,#E5D3AC 60%,#8A6A33);
   background-size:200% auto;
   -webkit-background-clip:text;
   background-clip:text;
@@ -154,14 +155,14 @@ a{color:inherit}
   position:sticky;
   top:0;
   z-index:100;
-  background:rgba(250,247,241,.88);
+  background:rgba(241,232,214,.88);
   -webkit-backdrop-filter:blur(14px);
   backdrop-filter:blur(14px);
   border-bottom:1px solid var(--line);
   transition:box-shadow .3s ease,background .3s ease;
 }
 .site-header.scrolled{
-  background:rgba(250,247,241,.96);
+  background:rgba(241,232,214,.96);
   box-shadow:0 10px 30px rgba(120,100,60,.12);
 }
 
@@ -241,8 +242,8 @@ a{color:inherit}
   border-radius:999px;
   border:0;
   cursor:pointer;
-  background:linear-gradient(135deg,#D9B96A,#B8934A);
-  color:#241f18;
+  background:linear-gradient(135deg,#C9A45C,#8A6A33);
+  color:#FFF8EA;
   font-size:15px;
   font-weight:800;
   text-decoration:none;
@@ -271,7 +272,7 @@ a{color:inherit}
   transition:background .25s ease,transform .25s ease;
 }
 .btn-outline:hover{
-  background:rgba(198,161,91,.1);
+  background:rgba(184,147,74,.1);
   transform:translateY(-2px);
 }
 
@@ -298,14 +299,14 @@ a{color:inherit}
   right:-140px;
   width:560px;
   height:560px;
-  background:radial-gradient(circle,rgba(198,161,91,.22) 0%,rgba(198,161,91,0) 70%);
+  background:radial-gradient(circle,rgba(184,147,74,.22) 0%,rgba(184,147,74,0) 70%);
   pointer-events:none;
 }
 .hero::after{
   content:"";
   position:absolute;
   inset:0;
-  background-image:radial-gradient(rgba(154,123,63,.10) 1px,transparent 1px);
+  background-image:radial-gradient(rgba(138,106,51,.10) 1px,transparent 1px);
   background-size:26px 26px;
   pointer-events:none;
   opacity:.5;
@@ -403,7 +404,7 @@ a{color:inherit}
 .orbit{
   position:absolute;
   inset:-26px;
-  border:1px dashed rgba(198,161,91,.55);
+  border:1px dashed rgba(184,147,74,.55);
   border-radius:50%;
   pointer-events:none;
   animation:orbit-spin 40s linear infinite;
@@ -425,7 +426,7 @@ a{color:inherit}
   transform:translateX(-50%);
   width:640px;
   height:420px;
-  background:radial-gradient(ellipse,rgba(198,161,91,.18) 0%,rgba(198,161,91,0) 70%);
+  background:radial-gradient(ellipse,rgba(184,147,74,.18) 0%,rgba(184,147,74,0) 70%);
   pointer-events:none;
 }
 .page-hero h1{
@@ -550,7 +551,7 @@ a.card{
   font-weight:600;
   font-size:44px;
   line-height:1;
-  background:linear-gradient(120deg,#9A7B3F,#C6A15B 40%,#D9B96A 60%,#9A7B3F);
+  background:linear-gradient(120deg,#8A6A33,#B8934A 40%,#E5D3AC 60%,#8A6A33);
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
@@ -664,7 +665,7 @@ a.card{
    ============================================================ */
 .cta-band{
   border-radius:var(--radius-xl);
-  background:linear-gradient(180deg,#FFFFFF,#F5EFE3);
+  background:linear-gradient(180deg,#F6EFDD,#EADFC8);
   border:1px solid var(--line);
   padding:56px 40px;
   text-align:center;
@@ -680,7 +681,7 @@ a.card{
   transform:translateX(-50%);
   width:480px;
   height:280px;
-  background:radial-gradient(ellipse,rgba(198,161,91,.16) 0%,rgba(198,161,91,0) 70%);
+  background:radial-gradient(ellipse,rgba(184,147,74,.16) 0%,rgba(184,147,74,0) 70%);
   pointer-events:none;
 }
 .cta-band h2{
@@ -809,7 +810,7 @@ a.card{
   font-weight:600;
   font-size:38px;
   letter-spacing:1px;
-  background:linear-gradient(120deg,#9A7B3F,#C6A15B 40%,#D9B96A 60%,#9A7B3F);
+  background:linear-gradient(120deg,#8A6A33,#B8934A 40%,#E5D3AC 60%,#8A6A33);
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
@@ -897,10 +898,10 @@ a.card{
 .contact-form select:focus{
   outline:none;
   border-color:var(--gold);
-  box-shadow:0 0 0 4px rgba(198,161,91,.18);
+  box-shadow:0 0 0 4px rgba(184,147,74,.18);
 }
 .contact-form input::placeholder,
-.contact-form textarea::placeholder{color:#B3AA9B}
+.contact-form textarea::placeholder{color:#8A7A63}
 
 /* ============================================================
    MISC LAYOUT
@@ -924,7 +925,7 @@ a.card{
   font-weight:600;
   font-size:52px;
   line-height:1;
-  background:linear-gradient(120deg,#9A7B3F,#C6A15B 40%,#D9B96A 60%,#9A7B3F);
+  background:linear-gradient(120deg,#8A6A33,#B8934A 40%,#E5D3AC 60%,#8A6A33);
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
@@ -973,7 +974,7 @@ a.card{
     flex-direction:column;
     align-items:stretch;
     gap:0;
-    background:#FFFFFF;
+    background:#FBF5E9;
     border-bottom:1px solid var(--line);
     box-shadow:0 18px 40px rgba(120,100,60,.12);
     padding:8px 0;
