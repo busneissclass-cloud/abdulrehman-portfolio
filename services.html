@@ -365,6 +365,100 @@ h3{font-size:1.28rem}
   .btn-row .btn{width:100%}
 }
 
+/* ============================================================
+   SIGNATURE HERO (home) — striking, premium, memorable
+   ============================================================ */
+.hero{padding:100px 0 112px}
+.hero::before{
+  background:
+    radial-gradient(680px 360px at 90% 4%,rgba(198,161,91,.20),transparent 65%),
+    radial-gradient(620px 380px at 2% 92%,rgba(12,107,79,.13),transparent 65%),
+    radial-gradient(420px 300px at 45% 45%,rgba(198,161,91,.06),transparent 70%);
+}
+.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.watermark{
+  position:absolute;top:2%;left:50%;transform:translateX(-50%);
+  font-family:var(--font-display);font-weight:700;font-size:clamp(6rem,17vw,14rem);
+  color:transparent;-webkit-text-stroke:1.5px rgba(198,161,91,.30);
+  letter-spacing:.04em;white-space:nowrap;user-select:none;line-height:1;
+}
+.hero-copy{position:relative;z-index:1}
+.hero h1{font-size:clamp(2.9rem,6.4vw,4.8rem);line-height:1.04;letter-spacing:-.022em;margin-bottom:22px}
+.hero h1 .accent em{
+  font-style:italic;font-weight:600;
+  background:linear-gradient(transparent 60%,rgba(198,161,91,.50) 60%,rgba(198,161,91,.50) 95%,transparent 95%);
+}
+.hero-sub{font-size:1.2rem;max-width:580px}
+.hero-sub strong{color:var(--ink)}
+.btn-lg{padding:17px 36px;font-size:1.05rem}
+/* trust stats — real numbers only */
+.hero-stats{display:flex;margin:32px 0 4px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hstat{padding:18px 30px 18px 0;margin-right:30px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+.hstat:last-child{border-right:0;margin-right:0}
+.hstat strong{font-family:var(--font-display);font-size:2rem;color:var(--emerald);line-height:1}
+.hstat span{font-size:.8rem;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:7px}
+/* portrait presentation */
+.portrait-blob{
+  position:absolute;inset:4% -6% -8% 4%;pointer-events:none;
+  background:
+    radial-gradient(closest-side,rgba(12,107,79,.16),transparent 70%),
+    radial-gradient(closest-side at 82% 18%,rgba(198,161,91,.26),transparent 70%);
+  filter:blur(12px);
+}
+.portrait-frame{
+  border:7px solid var(--white);outline:2px solid var(--gold);outline-offset:10px;
+}
+.float-card{
+  position:absolute;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);
+  border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-md);
+  padding:13px 18px;z-index:2;display:flex;flex-direction:column;gap:3px;max-width:210px;
+  animation:floaty 5.5s ease-in-out infinite;
+}
+.float-card strong{font-size:.93rem;color:var(--ink);line-height:1.3}
+.float-card span{font-size:.79rem;color:var(--muted);line-height:1.35}
+.fc-1{top:11%;left:-9%}
+.fc-2{bottom:9%;right:-7%;animation-delay:2.6s}
+.fc-dot{width:9px;height:9px;border-radius:50%;background:var(--emerald);display:inline-block;margin-right:7px;box-shadow:0 0 0 4px var(--emerald-tint)}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+
+/* ============================================================
+   INNER PAGE HEROES — stronger presence
+   ============================================================ */
+.page-hero{padding:92px 0 72px}
+.page-hero h1{font-size:clamp(2.5rem,5.4vw,3.8rem);letter-spacing:-.02em;line-height:1.08}
+.page-hero h1::after{
+  content:"";display:block;width:76px;height:4px;border-radius:4px;margin:24px auto 0;
+  background:linear-gradient(90deg,var(--emerald),var(--gold));
+}
+.page-hero .eyebrow{font-size:.82rem}
+.crumbs{font-size:.86rem;letter-spacing:.04em}
+.crumbs a{font-weight:600}
+
+/* section headings — stronger hierarchy */
+.section-head h2{letter-spacing:-.018em}
+.eyebrow{font-size:.8rem}
+
+/* responsive */
+@media(max-width:1100px){
+  .fc-1{left:-3%}
+  .fc-2{right:-3%}
+}
+@media(max-width:960px){
+  .float-card{padding:10px 14px;max-width:180px}
+  .watermark{font-size:clamp(4rem,20vw,7rem);top:0}
+}
+@media(max-width:680px){
+  .hero{padding:66px 0 72px}
+  .float-card{display:none}
+  .hero-stats{flex-wrap:wrap}
+  .hstat{padding:13px 20px 13px 0;margin-right:20px}
+  .hstat strong{font-size:1.6rem}
+  .page-hero{padding:64px 0 52px}
+}
+@media (prefers-reduced-motion:reduce){
+  .float-card{animation:none}
+}
+
 </style>
 </head>
 <body>
@@ -403,67 +497,166 @@ h3{font-size:1.28rem}
 
       <article class="service-row reveal">
         <div class="icon-badge">🔍</div>
-        <div><h2>SEO Services</h2><p>Technical audits, on-page optimisation, local SEO and ecommerce SEO services in Pakistan that bring ready-to-buy visitors from Google — and keep them coming without paying per click.</p></div>
+        <div><h2>SEO Services</h2><p>Technical audits, keyword strategy and on-page improvements that make your site easier to find. Content and authority plans are built for steady, durable organic growth — SEO services in Pakistan designed to bring buyers, not just visitors, from Google.</p>
+        <p>Most SEO fails because it—s treated as a one-time checklist. I start with a full technical audit — crawling, indexing, speed, structure — then map keywords to real buying intent, fix what blocks Google, and build content and authority month after month. Every change is tracked, so you always see what moved and why.</p>
+        <p style="margin:14px 0 2px"><strong>What's included:</strong></p>
+        <ul class="check-list" style="margin-top:6px">
+          <li>Full technical SEO audit with prioritised fixes</li>
+          <li>Keyword strategy mapped to buying intent</li>
+          <li>On-page optimisation and content guidance</li>
+          <li>Authority building for durable organic growth</li>
+        </ul>
+        <p><strong>Who it's for:</strong> businesses that depend on Google for customers and want compounding traffic that doesn—t stop when the ad budget does.</p></div>
         <a class="btn btn-outline btn-sm go" href="/contact">Discuss SEO →</a>
       </article>
 
       <article class="service-row reveal">
         <div class="icon-badge">📈</div>
-        <div><h2>Performance Marketing</h2><p>Full-funnel paid media planning across Google, Meta and TikTok. Budgets, creative direction and reporting all managed against one number: your return on ad spend.</p></div>
+        <div><h2>Performance Marketing</h2><p>Measurement-led acquisition focused on efficient growth, not vanity metrics. Campaign insights guide testing, budget decisions and the next move.</p>
+        <p>Performance marketing only works when every rupee is accountable. I set up clean measurement first, then plan full-funnel paid media across Google, Meta and TikTok — budgets, creative direction and reporting all managed against one number: your return on ad spend.</p>
+        <p style="margin:14px 0 2px"><strong>What's included:</strong></p>
+        <ul class="check-list" style="margin-top:6px">
+          <li>Clean conversion tracking and measurement setup</li>
+          <li>Full-funnel paid media planning across Google, Meta and TikTok</li>
+          <li>Creative direction and structured testing roadmap</li>
+          <li>ROAS-focused reporting in plain English</li>
+        </ul>
+        <p><strong>Who it's for:</strong> businesses already spending on ads — or ready to — who want growth they can measure, not reports full of impressions.</p></div>
         <a class="btn btn-outline btn-sm go" href="/contact">Discuss →</a>
       </article>
 
       <article class="service-row reveal">
         <div class="icon-badge">🎯</div>
-        <div><h2>Google Ads Management</h2><p>Search, Shopping, Display and YouTube campaigns rebuilt around intent. Negative-keyword hygiene, conversion tracking and landing pages that match the ad — so every click has a job.</p></div>
+        <div><h2>Google Ads Management</h2><p>High-intent search and performance campaigns designed to reach people ready to act. Tracking and optimization keep spend focused on meaningful outcomes.</p>
+        <p>Most ad accounts leak money through broad matching, missing negatives and landing pages that don—t match the ad. As a Google Ads expert, I rebuild accounts around intent — Search, Shopping, Display and YouTube — with tight keyword hygiene, conversion tracking and pages built to convert the click.</p>
+        <p style="margin:14px 0 2px"><strong>What's included:</strong></p>
+        <ul class="check-list" style="margin-top:6px">
+          <li>Full account audit and rebuild around search intent</li>
+          <li>Search, Shopping, Display and YouTube campaign setup</li>
+          <li>Conversion tracking and negative-keyword hygiene</li>
+          <li>Landing pages aligned to each ad group</li>
+        </ul>
+        <p><strong>Who it's for:</strong> businesses targeting customers who are actively searching — where every click should have a job.</p></div>
         <a class="btn btn-outline btn-sm go" href="/contact">Discuss Google Ads →</a>
       </article>
 
       <article class="service-row reveal">
         <div class="icon-badge">📱</div>
-        <div><h2>Meta Ads Management</h2><p>Facebook and Instagram ads with creative testing systems, audience ladders and retargeting flows — built to lower your cost per lead month after month.</p></div>
+        <div><h2>Meta Ads Management</h2><p>Full-funnel Facebook and Instagram campaigns built around strong offers and creative testing. Targeting, budgets and results are reviewed continuously.</p>
+        <p>Meta rewards advertisers who test systematically. I build full-funnel Facebook and Instagram campaigns around strong offers, with creative testing systems, audience ladders and retargeting flows — reviewed continuously to bring your cost per lead down month after month.</p>
+        <p style="margin:14px 0 2px"><strong>What's included:</strong></p>
+        <ul class="check-list" style="margin-top:6px">
+          <li>Full-funnel campaign structure, from prospecting to retargeting</li>
+          <li>Creative testing system for ads that fatigue fast</li>
+          <li>Audience ladders and lookalike scaling</li>
+          <li>Continuous optimisation against cost per lead</li>
+        </ul>
+        <p><strong>Who it's for:</strong> e-commerce, local and service businesses that need a steady flow of leads from Facebook and Instagram.</p></div>
         <a class="btn btn-outline btn-sm go" href="/contact">Discuss Meta Ads →</a>
       </article>
 
       <article class="service-row reveal">
         <div class="icon-badge">📣</div>
-        <div><h2>Digital Marketing Strategy</h2><p>Not sure where to start? A clear, prioritised roadmap across channels — what to do first, what to skip, and what each move should earn. Strategy you can hand to any team.</p></div>
+        <div><h2>Digital Marketing Strategy</h2><p>A connected plan across search, social, content and conversion. Every channel works toward the same audience, message and measurable business goal.</p>
+        <p>Not sure where to start? You get a clear, prioritised roadmap across channels — what to do first, what to skip, and what each move should earn. Strategy you can hand to any team — built by someone who also implements, so nothing in it is theoretical.</p>
+        <p style="margin:14px 0 2px"><strong>What's included:</strong></p>
+        <ul class="check-list" style="margin-top:6px">
+          <li>Audit of current channels, website and competitors</li>
+          <li>Prioritised roadmap ranked by revenue impact</li>
+          <li>Channel roles, budgets and success metrics defined</li>
+          <li>Handover document your team can execute</li>
+        </ul>
+        <p><strong>Who it's for:</strong> founders and teams who need direction before spend — one digital marketing consultant in Pakistan to map the whole system.</p></div>
         <a class="btn btn-outline btn-sm go" href="/contact">Discuss strategy →</a>
       </article>
 
       <article class="service-row reveal">
         <div class="icon-badge">💻</div>
-        <div><h2>Web Development</h2><p>Fast, conversion-focused websites and web apps — from marketing sites to dashboards — built with clean code, proper SEO foundations and analytics from day one.</p></div>
+        <div><h2>Web Development</h2><p>Fast, responsive websites planned around clear journeys and conversion. Clean front-end development keeps every experience polished across screen sizes.</p>
+        <p>A website should sell, not just sit there. I plan every build around clear user journeys — what the visitor needs to believe and do — then develop it with clean code, proper SEO foundations and analytics from day one. Fast on mobile, polished on desktop.</p>
+        <p style="margin:14px 0 2px"><strong>What's included:</strong></p>
+        <ul class="check-list" style="margin-top:6px">
+          <li>Conversion-focused website planning and build</li>
+          <li>Responsive front-end that works on every screen</li>
+          <li>SEO foundations and analytics configured from day one</li>
+          <li>Speed optimisation and clean, maintainable code</li>
+        </ul>
+        <p><strong>Who it's for:</strong> businesses whose website should be their best salesperson — from marketing sites to dashboards and web apps.</p></div>
         <a class="btn btn-outline btn-sm go" href="/contact">Discuss web dev →</a>
       </article>
 
       <article class="service-row reveal">
         <div class="icon-badge">📲</div>
-        <div><h2>App Development</h2><p>Mobile apps planned around real user journeys — from MVP scope to launch. Practical builds that solve one problem brilliantly before growing further.</p></div>
+        <div><h2>App Development</h2><p>Focused mobile experiences shaped around the real needs of users and the business. Flows stay simple, useful and ready for practical day-to-day use.</p>
+        <p>Good apps do one job brilliantly before growing further. I scope MVPs tightly around real user journeys, keep flows simple and useful, and build for practical day-to-day use — so you launch faster and learn cheaper.</p>
+        <p style="margin:14px 0 2px"><strong>What's included:</strong></p>
+        <ul class="check-list" style="margin-top:6px">
+          <li>MVP scoping tied to one clear user problem</li>
+          <li>User journey mapping and flow design</li>
+          <li>Practical build, tested on real devices</li>
+          <li>Launch support and iteration plan</li>
+        </ul>
+        <p><strong>Who it's for:</strong> founders validating an idea, or businesses putting a core workflow in their customers— pockets.</p></div>
         <a class="btn btn-outline btn-sm go" href="/contact">Discuss apps →</a>
       </article>
 
       <article class="service-row reveal">
         <div class="icon-badge">⚙️</div>
-        <div><h2>Custom Software Development</h2><p>Portals, internal tools and integrations built around how your team already works — replacing spreadsheet chaos with systems that save hours every week.</p></div>
+        <div><h2>Custom Software Development</h2><p>Purpose-built portals, dashboards and internal tools that match the way your team works. Flexible architecture supports new features as the business grows.</p>
+        <p>Off-the-shelf tools force your team into someone—s workflow. I build portals, dashboards and internal tools around how your team already works — replacing spreadsheet chaos with systems that save hours every week, on an architecture flexible enough to grow with you.</p>
+        <p style="margin:14px 0 2px"><strong>What's included:</strong></p>
+        <ul class="check-list" style="margin-top:6px">
+          <li>Workflow analysis before a single line of code</li>
+          <li>Custom portals, dashboards and internal tools</li>
+          <li>Integrations with the tools you already use</li>
+          <li>Flexible architecture ready for new features</li>
+        </ul>
+        <p><strong>Who it's for:</strong> teams drowning in spreadsheets and manual work who need software shaped around them.</p></div>
         <a class="btn btn-outline btn-sm go" href="/contact">Discuss software →</a>
       </article>
 
       <article class="service-row reveal">
         <div class="icon-badge">📝</div>
-        <div><h2>WordPress Development</h2><p>WordPress websites that are fast, secure and easy to edit — custom themes, speed optimisation and SEO structure done right, without plugin bloat.</p></div>
+        <div><h2>WordPress Development</h2><p>Professional WordPress websites that are easy to manage without giving up speed. Themes, content and essential integrations are configured for the job.</p>
+        <p>WordPress powers half the web — badly, when it—s bloated with plugins. As a WordPress developer, I build fast, secure sites with custom themes, speed optimisation and proper SEO structure — and an admin area your team can actually use without calling a developer.</p>
+        <p style="margin:14px 0 2px"><strong>What's included:</strong></p>
+        <ul class="check-list" style="margin-top:6px">
+          <li>Custom, fast theme setup without plugin bloat</li>
+          <li>Speed optimisation and security hardening</li>
+          <li>SEO structure done right from the start</li>
+          <li>Easy-to-manage admin with handover walkthrough</li>
+        </ul>
+        <p><strong>Who it's for:</strong> businesses that want a professional site they can update themselves — without sacrificing speed or rankings.</p></div>
         <a class="btn btn-outline btn-sm go" href="/contact">Discuss WordPress →</a>
       </article>
 
       <article class="service-row reveal">
         <div class="icon-badge">🛒</div>
-        <div><h2>Shopify Development</h2><p>Shopify stores designed to sell: persuasive product pages, checkout flows that don't leak, and technical SEO baked in from the first commit.</p></div>
+        <div><h2>Shopify Development</h2><p>Conversion-ready storefronts with clear collections, product pages and checkout journeys. The build supports confident buying on desktop and mobile.</p>
+        <p>A Shopify store lives or dies on its product pages and checkout. As a Shopify expert, I design stores to sell — persuasive product pages, clear collections, checkout flows that don—t leak — with technical SEO baked in from the first commit so Google finds you too.</p>
+        <p style="margin:14px 0 2px"><strong>What's included:</strong></p>
+        <ul class="check-list" style="margin-top:6px">
+          <li>Store setup with a conversion-focused theme</li>
+          <li>Product and collection pages that persuade</li>
+          <li>Checkout flow optimisation to stop leaks</li>
+          <li>Technical SEO baked in from day one</li>
+        </ul>
+        <p><strong>Who it's for:</strong> e-commerce brands that need a store built to sell — on desktop and mobile.</p></div>
         <a class="btn btn-outline btn-sm go" href="/contact">Discuss Shopify →</a>
       </article>
 
       <article class="service-row reveal">
         <div class="icon-badge">🤖</div>
-        <div><h2>AI Automation</h2><p>AI chat assistants and workflow automations that answer leads in seconds, follow up automatically and keep your records tidy — like hiring staff that never sleep.</p></div>
+        <div><h2>AI Automation</h2><p>Practical workflows that remove repetitive tasks, connect tools and speed up responses. Human oversight stays in place wherever judgment matters.</p>
+        <p>AI automation isn—t about replacing people — it—s about removing the repetitive work that eats their day. I map your workflows, then build chat assistants and automations with tools like Zapier and Make that answer leads in seconds, follow up automatically and keep records tidy — with human oversight wherever judgment matters.</p>
+        <p style="margin:14px 0 2px"><strong>What's included:</strong></p>
+        <ul class="check-list" style="margin-top:6px">
+          <li>Workflow mapping to find automation opportunities</li>
+          <li>AI chat assistants for instant lead response</li>
+          <li>Tool integrations via Zapier, Make and APIs</li>
+          <li>Human-oversight checkpoints where judgment matters</li>
+        </ul>
+        <p><strong>Who it's for:</strong> businesses losing leads to slow replies, or drowning in repetitive admin.</p></div>
         <a class="btn btn-outline btn-sm go" href="/contact">Discuss automation →</a>
       </article>
 
@@ -481,26 +674,30 @@ h3{font-size:1.28rem}
       <div class="models">
         <div class="model-card reveal">
           <h3>Project-Based</h3>
-          <p style="color:var(--muted)">One defined outcome, fixed price, clear deadline.</p>
+          <p style="color:var(--muted)">One defined outcome, fixed price, clear deadline &mdash; best for a website, campaign setup, audit, redesign or custom digital product with a clear finish line.</p>
           <ul>
             <li>Website builds &amp; redesigns</li>
-            <li>SEO audits with action plans</li>
-            <li>Ad account rebuilds</li>
-            <li>Automation setups</li>
-            <li>Fixed quote before we start</li>
+            <li>SEO audits with prioritised action plans</li>
+            <li>Google &amp; Meta ad account rebuilds</li>
+            <li>AI automation setups</li>
+            <li>Fixed quote and scope document before we start</li>
+            <li>Structured review rounds and clean handover</li>
+            <li>A single point of contact throughout</li>
           </ul>
           <a class="btn btn-outline" href="/contact">Request a Quote</a>
         </div>
         <div class="model-card featured reveal">
           <span class="flag">Most popular</span>
           <h3>Monthly Retainer</h3>
-          <p style="color:var(--muted)">Ongoing growth, managed end-to-end.</p>
+          <p style="color:var(--muted)">Ongoing growth, managed end-to-end &mdash; best when SEO, paid media, optimisation or automation need consistent attention, testing and iteration.</p>
           <ul>
             <li>SEO + content, month after month</li>
             <li>Paid media managed against ROAS</li>
-            <li>Monthly plain-English report</li>
+            <li>Monthly plain-English report on leads and sales</li>
             <li>Continuous testing &amp; improvement</li>
-            <li>Cancel with 30 days' notice</li>
+            <li>Quarterly strategy reviews</li>
+            <li>Direct WhatsApp access during working hours</li>
+            <li>Cancel with 30 days' notice &mdash; no lock-in</li>
           </ul>
           <a class="btn btn-primary" href="/contact">Book a Free Call</a>
         </div>

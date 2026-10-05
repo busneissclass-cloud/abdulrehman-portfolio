@@ -365,6 +365,100 @@ h3{font-size:1.28rem}
   .btn-row .btn{width:100%}
 }
 
+/* ============================================================
+   SIGNATURE HERO (home) — striking, premium, memorable
+   ============================================================ */
+.hero{padding:100px 0 112px}
+.hero::before{
+  background:
+    radial-gradient(680px 360px at 90% 4%,rgba(198,161,91,.20),transparent 65%),
+    radial-gradient(620px 380px at 2% 92%,rgba(12,107,79,.13),transparent 65%),
+    radial-gradient(420px 300px at 45% 45%,rgba(198,161,91,.06),transparent 70%);
+}
+.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.watermark{
+  position:absolute;top:2%;left:50%;transform:translateX(-50%);
+  font-family:var(--font-display);font-weight:700;font-size:clamp(6rem,17vw,14rem);
+  color:transparent;-webkit-text-stroke:1.5px rgba(198,161,91,.30);
+  letter-spacing:.04em;white-space:nowrap;user-select:none;line-height:1;
+}
+.hero-copy{position:relative;z-index:1}
+.hero h1{font-size:clamp(2.9rem,6.4vw,4.8rem);line-height:1.04;letter-spacing:-.022em;margin-bottom:22px}
+.hero h1 .accent em{
+  font-style:italic;font-weight:600;
+  background:linear-gradient(transparent 60%,rgba(198,161,91,.50) 60%,rgba(198,161,91,.50) 95%,transparent 95%);
+}
+.hero-sub{font-size:1.2rem;max-width:580px}
+.hero-sub strong{color:var(--ink)}
+.btn-lg{padding:17px 36px;font-size:1.05rem}
+/* trust stats — real numbers only */
+.hero-stats{display:flex;margin:32px 0 4px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hstat{padding:18px 30px 18px 0;margin-right:30px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+.hstat:last-child{border-right:0;margin-right:0}
+.hstat strong{font-family:var(--font-display);font-size:2rem;color:var(--emerald);line-height:1}
+.hstat span{font-size:.8rem;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:7px}
+/* portrait presentation */
+.portrait-blob{
+  position:absolute;inset:4% -6% -8% 4%;pointer-events:none;
+  background:
+    radial-gradient(closest-side,rgba(12,107,79,.16),transparent 70%),
+    radial-gradient(closest-side at 82% 18%,rgba(198,161,91,.26),transparent 70%);
+  filter:blur(12px);
+}
+.portrait-frame{
+  border:7px solid var(--white);outline:2px solid var(--gold);outline-offset:10px;
+}
+.float-card{
+  position:absolute;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);
+  border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-md);
+  padding:13px 18px;z-index:2;display:flex;flex-direction:column;gap:3px;max-width:210px;
+  animation:floaty 5.5s ease-in-out infinite;
+}
+.float-card strong{font-size:.93rem;color:var(--ink);line-height:1.3}
+.float-card span{font-size:.79rem;color:var(--muted);line-height:1.35}
+.fc-1{top:11%;left:-9%}
+.fc-2{bottom:9%;right:-7%;animation-delay:2.6s}
+.fc-dot{width:9px;height:9px;border-radius:50%;background:var(--emerald);display:inline-block;margin-right:7px;box-shadow:0 0 0 4px var(--emerald-tint)}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+
+/* ============================================================
+   INNER PAGE HEROES — stronger presence
+   ============================================================ */
+.page-hero{padding:92px 0 72px}
+.page-hero h1{font-size:clamp(2.5rem,5.4vw,3.8rem);letter-spacing:-.02em;line-height:1.08}
+.page-hero h1::after{
+  content:"";display:block;width:76px;height:4px;border-radius:4px;margin:24px auto 0;
+  background:linear-gradient(90deg,var(--emerald),var(--gold));
+}
+.page-hero .eyebrow{font-size:.82rem}
+.crumbs{font-size:.86rem;letter-spacing:.04em}
+.crumbs a{font-weight:600}
+
+/* section headings — stronger hierarchy */
+.section-head h2{letter-spacing:-.018em}
+.eyebrow{font-size:.8rem}
+
+/* responsive */
+@media(max-width:1100px){
+  .fc-1{left:-3%}
+  .fc-2{right:-3%}
+}
+@media(max-width:960px){
+  .float-card{padding:10px 14px;max-width:180px}
+  .watermark{font-size:clamp(4rem,20vw,7rem);top:0}
+}
+@media(max-width:680px){
+  .hero{padding:66px 0 72px}
+  .float-card{display:none}
+  .hero-stats{flex-wrap:wrap}
+  .hstat{padding:13px 20px 13px 0;margin-right:20px}
+  .hstat strong{font-size:1.6rem}
+  .page-hero{padding:64px 0 52px}
+}
+@media (prefers-reduced-motion:reduce){
+  .float-card{animation:none}
+}
+
 </style>
 </head>
 <body>
@@ -409,10 +503,16 @@ h3{font-size:1.28rem}
       </div>
       <div class="reveal">
         <p class="eyebrow">My story</p>
-        <h2 style="margin-bottom:18px">Marketing and code, learned side by side</h2>
-        <p style="margin-bottom:16px">I started where most marketers never go — inside the technology itself. Learning how websites are actually built changed the way I run campaigns: I don't just buy traffic, I shape the pages, tracking and follow-up systems that turn that traffic into revenue.</p>
-        <p style="margin-bottom:16px">Today I work as a full-stack digital marketer: SEO services that compound over time, Google Ads and Meta Ads managed against real return on spend, WordPress and Shopify development, and AI automation that answers leads while you sleep.</p>
+        <h2 style="margin-bottom:18px">Strategy to launch, without the gaps</h2>
+        <p style="margin-bottom:16px">I'm Abdul Rehman — a full-stack digital marketer from Pakistan. I connect search, paid media and technology into one plan, so nothing falls between the cracks.</p>
+        <p style="margin-bottom:16px">I started where most marketers never go — inside the technology itself. Learning how websites are actually built changed the way I run campaigns: I don't just buy traffic, I shape the pages, tracking and follow-up systems that turn that traffic into revenue. When search, advertising and development are planned together, the customer journey becomes clearer — and the work becomes easier to measure.</p>
+        <p style="margin-bottom:16px">Today I work across SEO, paid acquisition, websites and automation so the message, traffic source and conversion experience support each other. SEO services that compound over time, Google Ads and Meta Ads managed against real return on spend, WordPress and Shopify development, and AI automation that answers leads while you sleep.</p>
+        <p style="margin-bottom:16px">Instead of adding activity for its own sake, I identify the most valuable constraint in your business, define the next practical move and build around outcomes you can actually track. Every engagement follows the same logic — <strong>discover</strong> the audience, demand and conversion barriers; <strong>build</strong> fast experiences and campaigns made for action; <strong>improve</strong> by measuring, testing and scaling what performs.</p>
         <p style="margin-bottom:8px">My rule is simple — every recommendation must be explainable in plain language and measurable in your reports. If it doesn't move leads, sales or efficiency, we don't do it.</p>
+        <h3 style="margin:26px 0 12px;font-size:1.15rem">My approach in practice</h3>
+        <p style="margin-bottom:12px"><strong>Audit first, promises later.</strong> I look at your website, ad accounts, analytics and competitors before recommending anything. The plan is ranked by what should bring revenue soonest — not by what's easiest to sell.</p>
+        <p style="margin-bottom:12px"><strong>Tracking before traffic.</strong> Measurement is installed before a single rupee is spent, so every click, call and sale can be traced back to the decision that caused it.</p>
+        <p style="margin-bottom:8px"><strong>Plain English, always.</strong> You'll never get a report full of vanity metrics or a strategy hidden behind jargon. If I can't explain it simply, I haven't understood it well enough.</p>
         <ul class="check-list">
           <li><strong>11 specialist services</strong> — from technical SEO to custom software, one accountable person</li>
           <li><strong>6 live projects</strong> — e-commerce, real estate, education, directories and agency sites</li>
@@ -428,22 +528,28 @@ h3{font-size:1.28rem}
       <div class="section-head reveal">
         <p class="eyebrow">How I work</p>
         <h2>Practical, transparent, data-led</h2>
+        <p class="lead" style="text-align:left;max-width:720px">Four principles guide every engagement — from a one-week audit to a year-long retainer. They're how I make sure the work stays honest, measurable and built to last.</p>
       </div>
-      <div class="grid-3">
+      <div class="grid-2">
         <article class="card reveal">
-          <div class="icon-badge">🧭</div>
-          <h3>Strategy before spend</h3>
-          <p>Every engagement starts with an audit — your site, your ad accounts, your competitors. The plan is ranked by what should bring revenue soonest, not by what's easiest to sell.</p>
+          <div class="icon-badge">&#129517;</div>
+          <h3>Data-led decisions over guesswork</h3>
+          <p>Every recommendation starts from your analytics, your market and your competitors — not trends, hunches or what worked for someone else. If the data doesn't support it, we don't do it. That discipline keeps budgets focused on moves with the highest probability of paying back.</p>
         </article>
         <article class="card reveal">
-          <div class="icon-badge">🔧</div>
-          <h3>Built, not just advised</h3>
-          <p>I implement the work myself: pages, campaigns, content, tracking and automations. No handoffs to juniors, no 40-page decks that gather dust.</p>
+          <div class="icon-badge">&#127919;</div>
+          <h3>Conversion-first user experiences</h3>
+          <p>Traffic is only half the job. Pages, forms, product pages and checkout flows are designed around one question: what makes this visitor act? Speed, clarity and trust signals are engineered in — not added as an afterthought once the ads are already running.</p>
         </article>
         <article class="card reveal">
-          <div class="icon-badge">📊</div>
-          <h3>Reported in plain English</h3>
-          <p>Monthly reporting ties every activity back to leads, sales and spend — plus what changes next and why. You'll always know what your money did.</p>
+          <div class="icon-badge">&#128172;</div>
+          <h3>Clear reporting and communication</h3>
+          <p>You always know what's happening, why it's happening and what it costs. Monthly reporting ties every activity back to leads, sales and spend — in plain English, with what changes next and why. No vanity metrics, no jargon walls, no surprises.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon-badge">&#129518;</div>
+          <h3>Scalable systems, not quick patches</h3>
+          <p>Quick patches create tomorrow's problems. I build with clean structure — documented campaigns, organised code, automations you can understand — so your website, ad accounts and workflows keep working as you grow instead of collapsing under their own weight.</p>
         </article>
       </div>
     </div>
@@ -477,9 +583,11 @@ h3{font-size:1.28rem}
           <h3>Working with me</h3>
           <ul>
             <li>You talk directly to the person doing the work</li>
-            <li>One connected plan across SEO, ads and web</li>
-            <li>Tracking and reporting in plain language</li>
+            <li>One connected plan across SEO, ads, web and automation</li>
+            <li>Tracking installed before spend — every result measurable</li>
+            <li>Reporting in plain language, tied to leads and sales</li>
             <li>You pay for expertise, not agency overhead</li>
+            <li>Proposals with fixed scope and price before we start</li>
             <li>Fast decisions — no account-manager telephone game</li>
           </ul>
         </div>
@@ -487,10 +595,12 @@ h3{font-size:1.28rem}
           <h3>The typical agency</h3>
           <ul>
             <li>You talk to an account manager; juniors do the work</li>
-            <li>Each channel handled in isolation</li>
-            <li>Reports full of vanity metrics</li>
+            <li>Each channel handled in isolation — SEO never meets the ads team</li>
+            <li>Reports full of vanity metrics that hide what matters</li>
             <li>Retainers priced for their office, not your outcome</li>
-            <li>Slow turnarounds and rigid contracts</li>
+            <li>Junior staff learning on your budget</li>
+            <li>Slow turnarounds, rigid contracts and upsells</li>
+            <li>You’re one account among dozens</li>
           </ul>
         </div>
       </div>

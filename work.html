@@ -365,6 +365,100 @@ h3{font-size:1.28rem}
   .btn-row .btn{width:100%}
 }
 
+/* ============================================================
+   SIGNATURE HERO (home) — striking, premium, memorable
+   ============================================================ */
+.hero{padding:100px 0 112px}
+.hero::before{
+  background:
+    radial-gradient(680px 360px at 90% 4%,rgba(198,161,91,.20),transparent 65%),
+    radial-gradient(620px 380px at 2% 92%,rgba(12,107,79,.13),transparent 65%),
+    radial-gradient(420px 300px at 45% 45%,rgba(198,161,91,.06),transparent 70%);
+}
+.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.watermark{
+  position:absolute;top:2%;left:50%;transform:translateX(-50%);
+  font-family:var(--font-display);font-weight:700;font-size:clamp(6rem,17vw,14rem);
+  color:transparent;-webkit-text-stroke:1.5px rgba(198,161,91,.30);
+  letter-spacing:.04em;white-space:nowrap;user-select:none;line-height:1;
+}
+.hero-copy{position:relative;z-index:1}
+.hero h1{font-size:clamp(2.9rem,6.4vw,4.8rem);line-height:1.04;letter-spacing:-.022em;margin-bottom:22px}
+.hero h1 .accent em{
+  font-style:italic;font-weight:600;
+  background:linear-gradient(transparent 60%,rgba(198,161,91,.50) 60%,rgba(198,161,91,.50) 95%,transparent 95%);
+}
+.hero-sub{font-size:1.2rem;max-width:580px}
+.hero-sub strong{color:var(--ink)}
+.btn-lg{padding:17px 36px;font-size:1.05rem}
+/* trust stats — real numbers only */
+.hero-stats{display:flex;margin:32px 0 4px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hstat{padding:18px 30px 18px 0;margin-right:30px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+.hstat:last-child{border-right:0;margin-right:0}
+.hstat strong{font-family:var(--font-display);font-size:2rem;color:var(--emerald);line-height:1}
+.hstat span{font-size:.8rem;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:7px}
+/* portrait presentation */
+.portrait-blob{
+  position:absolute;inset:4% -6% -8% 4%;pointer-events:none;
+  background:
+    radial-gradient(closest-side,rgba(12,107,79,.16),transparent 70%),
+    radial-gradient(closest-side at 82% 18%,rgba(198,161,91,.26),transparent 70%);
+  filter:blur(12px);
+}
+.portrait-frame{
+  border:7px solid var(--white);outline:2px solid var(--gold);outline-offset:10px;
+}
+.float-card{
+  position:absolute;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);
+  border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-md);
+  padding:13px 18px;z-index:2;display:flex;flex-direction:column;gap:3px;max-width:210px;
+  animation:floaty 5.5s ease-in-out infinite;
+}
+.float-card strong{font-size:.93rem;color:var(--ink);line-height:1.3}
+.float-card span{font-size:.79rem;color:var(--muted);line-height:1.35}
+.fc-1{top:11%;left:-9%}
+.fc-2{bottom:9%;right:-7%;animation-delay:2.6s}
+.fc-dot{width:9px;height:9px;border-radius:50%;background:var(--emerald);display:inline-block;margin-right:7px;box-shadow:0 0 0 4px var(--emerald-tint)}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+
+/* ============================================================
+   INNER PAGE HEROES — stronger presence
+   ============================================================ */
+.page-hero{padding:92px 0 72px}
+.page-hero h1{font-size:clamp(2.5rem,5.4vw,3.8rem);letter-spacing:-.02em;line-height:1.08}
+.page-hero h1::after{
+  content:"";display:block;width:76px;height:4px;border-radius:4px;margin:24px auto 0;
+  background:linear-gradient(90deg,var(--emerald),var(--gold));
+}
+.page-hero .eyebrow{font-size:.82rem}
+.crumbs{font-size:.86rem;letter-spacing:.04em}
+.crumbs a{font-weight:600}
+
+/* section headings — stronger hierarchy */
+.section-head h2{letter-spacing:-.018em}
+.eyebrow{font-size:.8rem}
+
+/* responsive */
+@media(max-width:1100px){
+  .fc-1{left:-3%}
+  .fc-2{right:-3%}
+}
+@media(max-width:960px){
+  .float-card{padding:10px 14px;max-width:180px}
+  .watermark{font-size:clamp(4rem,20vw,7rem);top:0}
+}
+@media(max-width:680px){
+  .hero{padding:66px 0 72px}
+  .float-card{display:none}
+  .hero-stats{flex-wrap:wrap}
+  .hstat{padding:13px 20px 13px 0;margin-right:20px}
+  .hstat strong{font-size:1.6rem}
+  .page-hero{padding:64px 0 52px}
+}
+@media (prefers-reduced-motion:reduce){
+  .float-card{animation:none}
+}
+
 </style>
 </head>
 <body>
@@ -410,6 +504,14 @@ h3{font-size:1.28rem}
             <h2>EcoFold Packaging</h2>
             <p class="project-url">ecofoldpackaging.com</p>
             <p>Custom eco-friendly packaging storefront for printed boxes, mailers, cosmetics and food packaging — with clear product discovery and an instant quote flow that turns browsers into enquiries.</p>
+            <p>Beyond the storefront, the build focuses on how packaging buyers actually shop: clear categories for printed boxes, mailers, cosmetics and food packaging, so a visitor finds the right product in seconds. An instant quote flow replaces the usual back-and-forth emails, turning browsers into enquiries while intent is hot.</p>
+            <p style="margin:14px 0 2px"><strong>What was delivered:</strong></p>
+            <ul class="check-list" style="margin-top:6px">
+              <li>Custom e-commerce storefront for eco-friendly packaging</li>
+              <li>Clear product discovery across boxes, mailers, cosmetics and food lines</li>
+              <li>Instant quote flow that turns browsers into enquiries</li>
+              <li>SEO foundations for search-led demand</li>
+            </ul>
             <div class="tags"><span>E-commerce</span><span>Packaging</span><span>SEO</span></div>
             <a class="visit-link" href="https://ecofoldpackaging.com/" target="_blank" rel="noopener">Visit live site <span class="arrow">↗</span></a>
           </div>
@@ -423,6 +525,14 @@ h3{font-size:1.28rem}
             <h2>ZProperty.pk</h2>
             <p class="project-url">zproperty.pk</p>
             <p>Pakistan real estate platform with verified listings and WhatsApp-first property enquiries — built to connect buyers with agents in seconds, not days.</p>
+            <p>Property portals live or die on trust and speed. ZProperty.pk is built around verified listings and WhatsApp-first enquiries, so buyers reach agents in seconds rather than days. CNIC-verified agents and a strict no-buyer-commission policy remove the two biggest frictions in Pakistan’s property market.</p>
+            <p style="margin:14px 0 2px"><strong>What was delivered:</strong></p>
+            <ul class="check-list" style="margin-top:6px">
+              <li>Pakistan real estate platform with verified listings</li>
+              <li>CNIC-verified agents for buyer trust</li>
+              <li>Direct WhatsApp enquiries — no waiting, no forms</li>
+              <li>Zero buyer commission model</li>
+            </ul>
             <div class="tags"><span>Real Estate</span><span>Web Platform</span><span>Local SEO</span></div>
             <a class="visit-link" href="https://zproperty.pk/" target="_blank" rel="noopener">Visit live site <span class="arrow">↗</span></a>
           </div>
@@ -436,6 +546,14 @@ h3{font-size:1.28rem}
             <h2>Calculadora Matemática</h2>
             <p class="project-url">calculadoramatematica.com</p>
             <p>Spanish-language mathematics platform with 30+ interactive tools across calculus, algebra, matrices and statistics — supported by an SEO content hub that captures search demand.</p>
+            <p>A Spanish-language learning platform with more than 30 interactive mathematical tools, supported by an SEO content hub that captures search demand. Each tool covers its topic in depth — calculus, algebra, matrices, arithmetic, statistics and geometry — turning one-off visitors into returning users.</p>
+            <p style="margin:14px 0 2px"><strong>What was delivered:</strong></p>
+            <ul class="check-list" style="margin-top:6px">
+              <li>30+ interactive mathematical tools</li>
+              <li>Coverage across calculus, algebra, matrices, arithmetic, statistics and geometry</li>
+              <li>Full Spanish-language experience</li>
+              <li>SEO content hub capturing search demand</li>
+            </ul>
             <div class="tags"><span>Web App</span><span>Education</span><span>SEO</span></div>
             <a class="visit-link" href="https://calculadoramatematica.com/" target="_blank" rel="noopener">Visit live site <span class="arrow">↗</span></a>
           </div>
@@ -449,6 +567,13 @@ h3{font-size:1.28rem}
             <h2>Avexent</h2>
             <p class="project-url">avexent.com</p>
             <p>AI digital marketing agency presence built around intelligent growth systems — positioning automation and performance marketing as one unified offer.</p>
+            <p>An AI digital marketing agency website built around a single idea: intelligent growth systems. The site connects automation, performance marketing, SEO, content and technology into one unified offer, positioning the agency as a systems thinker rather than another vendor selling isolated services.</p>
+            <p style="margin:14px 0 2px"><strong>What was delivered:</strong></p>
+            <ul class="check-list" style="margin-top:6px">
+              <li>Agency website with unified growth positioning</li>
+              <li>Automation, performance marketing, SEO, content and technology in one system</li>
+              <li>Service architecture designed to convert</li>
+            </ul>
             <div class="tags"><span>Agency Website</span><span>Development</span><span>SEO</span></div>
             <a class="visit-link" href="https://avexent.com/" target="_blank" rel="noopener">Visit live site <span class="arrow">↗</span></a>
           </div>
@@ -462,6 +587,13 @@ h3{font-size:1.28rem}
             <h2>Digital Clause</h2>
             <p class="project-url">digitalclause.net</p>
             <p>Digital marketing agency website joining SEO, paid media, content and automation under one coordinated plan — with service pages structured to rank and convert.</p>
+            <p>A digital marketing agency website joining SEO, paid ads, content, email, websites and automation under one coordinated plan. Service pages are structured to rank and convert, so the site works as a salesperson — not a brochure.</p>
+            <p style="margin:14px 0 2px"><strong>What was delivered:</strong></p>
+            <ul class="check-list" style="margin-top:6px">
+              <li>Agency website under one coordinated growth plan</li>
+              <li>SEO, paid ads, content, email, websites and automation joined up</li>
+              <li>Service pages structured to rank and convert</li>
+            </ul>
             <div class="tags"><span>Agency Website</span><span>Development</span><span>SEO</span></div>
             <a class="visit-link" href="https://digitalclause.net/" target="_blank" rel="noopener">Visit live site <span class="arrow">↗</span></a>
           </div>
@@ -475,6 +607,14 @@ h3{font-size:1.28rem}
             <h2>Thekedar</h2>
             <p class="project-url">thekedar.com.pk</p>
             <p>Free directory of verified builders, contractors, architects and material suppliers in Lahore — zero commission, with every conversation happening on WhatsApp.</p>
+            <p>A free Lahore directory for verified builders, contractors, architects and construction material suppliers — with zero commission. Every conversation happens on WhatsApp, cutting out the middleman entirely. Verification badges mean customers contact professionals with confidence from the first message.</p>
+            <p style="margin:14px 0 2px"><strong>What was delivered:</strong></p>
+            <ul class="check-list" style="margin-top:6px">
+              <li>Free directory of verified construction professionals in Lahore</li>
+              <li>Builders, contractors, architects and material suppliers</li>
+              <li>Direct WhatsApp contact — no platform fees</li>
+              <li>Zero-commission model with verified badges</li>
+            </ul>
             <div class="tags"><span>Directory</span><span>Local SEO</span><span>Web Platform</span></div>
             <a class="visit-link" href="https://www.thekedar.com.pk/" target="_blank" rel="noopener">Visit live site <span class="arrow">↗</span></a>
           </div>
