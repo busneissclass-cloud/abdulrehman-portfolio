@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://abdulrehman-portfolio-five.vercel.app/sitemap.xml
