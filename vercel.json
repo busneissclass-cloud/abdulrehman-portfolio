@@ -9,6 +9,14 @@
       "destination": "/about.html"
     },
     {
+      "source": "/services",
+      "destination": "/services.html"
+    },
+    {
+      "source": "/services/",
+      "destination": "/services.html"
+    },
+    {
       "source": "/work",
       "destination": "/work.html"
     },
@@ -25,52 +33,92 @@
       "destination": "/contact.html"
     },
     {
-      "source": "/work/ecofold-packaging",
-      "destination": "/work-ecofold-packaging.html"
+      "source": "/services/seo",
+      "destination": "/services-seo.html"
     },
     {
-      "source": "/work/ecofold-packaging/",
-      "destination": "/work-ecofold-packaging.html"
+      "source": "/services/seo/",
+      "destination": "/services-seo.html"
     },
     {
-      "source": "/work/zproperty",
-      "destination": "/work-zproperty.html"
+      "source": "/services/digital-marketing",
+      "destination": "/services-digital-marketing.html"
     },
     {
-      "source": "/work/zproperty/",
-      "destination": "/work-zproperty.html"
+      "source": "/services/digital-marketing/",
+      "destination": "/services-digital-marketing.html"
     },
     {
-      "source": "/work/thekedar",
-      "destination": "/work-thekedar.html"
+      "source": "/services/meta-ads",
+      "destination": "/services-meta-ads.html"
     },
     {
-      "source": "/work/thekedar/",
-      "destination": "/work-thekedar.html"
+      "source": "/services/meta-ads/",
+      "destination": "/services-meta-ads.html"
     },
     {
-      "source": "/work/calculadora-matematica",
-      "destination": "/work-calculadora-matematica.html"
+      "source": "/services/google-ads",
+      "destination": "/services-google-ads.html"
     },
     {
-      "source": "/work/calculadora-matematica/",
-      "destination": "/work-calculadora-matematica.html"
+      "source": "/services/google-ads/",
+      "destination": "/services-google-ads.html"
     },
     {
-      "source": "/work/avexent",
-      "destination": "/work-avexent.html"
+      "source": "/services/web-development",
+      "destination": "/services-web-development.html"
     },
     {
-      "source": "/work/avexent/",
-      "destination": "/work-avexent.html"
+      "source": "/services/web-development/",
+      "destination": "/services-web-development.html"
     },
     {
-      "source": "/work/digital-clause",
-      "destination": "/work-digital-clause.html"
+      "source": "/services/app-development",
+      "destination": "/services-app-development.html"
     },
     {
-      "source": "/work/digital-clause/",
-      "destination": "/work-digital-clause.html"
+      "source": "/services/app-development/",
+      "destination": "/services-app-development.html"
+    },
+    {
+      "source": "/services/custom-software-development",
+      "destination": "/services-custom-software-development.html"
+    },
+    {
+      "source": "/services/custom-software-development/",
+      "destination": "/services-custom-software-development.html"
+    },
+    {
+      "source": "/services/wordpress-development",
+      "destination": "/services-wordpress-development.html"
+    },
+    {
+      "source": "/services/wordpress-development/",
+      "destination": "/services-wordpress-development.html"
+    },
+    {
+      "source": "/services/shopify-development",
+      "destination": "/services-shopify-development.html"
+    },
+    {
+      "source": "/services/shopify-development/",
+      "destination": "/services-shopify-development.html"
+    },
+    {
+      "source": "/services/performance-marketing",
+      "destination": "/services-performance-marketing.html"
+    },
+    {
+      "source": "/services/performance-marketing/",
+      "destination": "/services-performance-marketing.html"
+    },
+    {
+      "source": "/services/ai-automation",
+      "destination": "/services-ai-automation.html"
+    },
+    {
+      "source": "/services/ai-automation/",
+      "destination": "/services-ai-automation.html"
     }
   ]
 }
